@@ -24,7 +24,7 @@ class HttpsRedirector(SimpleHTTPRequestHandler):
 def main():
     ap = argparse.ArgumentParser()  # pylint: disable=invalid-name
     ap.add_argument("--bind", default="0.0.0.0")
-    ap.add_argument("--http-port", type=int, default=80)
+    ap.add_argument("--port", type=int, default=80)
     args = ap.parse_args()
 
     httpd = HTTPServer((args.bind, args.port), HttpsRedirector)
